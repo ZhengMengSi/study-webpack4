@@ -18,14 +18,10 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            postcssOptions: {
-                                plugins: [
-                                    [
-                                        'postcss-preset-env'
-                                    ]
-                                ]
-                            }
-
+                            ident: 'postcss',
+                            plugins: () => [
+                                require('postcss-preset-env')()
+                            ]
                         }
                     }
                 ]
