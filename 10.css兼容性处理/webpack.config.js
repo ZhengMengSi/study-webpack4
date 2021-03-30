@@ -20,7 +20,9 @@ module.exports = {
                         options: {
                             postcssOptions: {
                                 plugins: [
-                                    'postcss-preset-env'
+                                    [
+                                        'postcss-preset-env'
+                                    ]
                                 ]
                             }
 
@@ -29,5 +31,14 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/built.css'
+        })
+    ],
+    mode: 'development'
 }
